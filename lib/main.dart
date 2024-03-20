@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:korsun/style.dart';
+import 'package:isp_wallet/style.dart';
 import 'package:provider/provider.dart';
 
 import 'generated/l10n.dart';
 import 'routers/routes.dart';
+
+double width = 0;
+double height = 0;
 
 Future<void> main() async {
   runApp(const App());
@@ -22,6 +25,8 @@ class _AppState extends State<App> {
 
   @override
   Widget build(BuildContext buildContext) {
+    width = MediaQuery.of(buildContext).size.width;
+    height = MediaQuery.of(buildContext).size.height;
       return MaterialApp.router(
         localizationsDelegates: const [
           S.delegate,
@@ -32,7 +37,7 @@ class _AppState extends State<App> {
         locale: const Locale('en'),
         themeMode: ThemeMode.light,
         theme: ThemeData(
-          scaffoldBackgroundColor: BC.green,
+          scaffoldBackgroundColor: BC.black,
           bottomSheetTheme:
           const BottomSheetThemeData(backgroundColor: Colors.transparent),
         ),

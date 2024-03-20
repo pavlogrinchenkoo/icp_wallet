@@ -1,12 +1,11 @@
 import 'dart:io';
-
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:korsun/generated/l10n.dart';
+import 'package:isp_wallet/generated/l10n.dart';
 
 Locale appLocale() {
   if (kIsWeb) {
-    return const Locale('en'); // TODO: Get from browser
+    return const Locale('en');
   } else {
     final systemLangCode = Platform.localeName.split('_').first;
     final locale = S.delegate.supportedLocales

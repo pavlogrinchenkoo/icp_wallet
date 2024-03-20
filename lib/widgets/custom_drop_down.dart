@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:korsun/style.dart';
+
+import 'package:isp_wallet/style.dart';
 
 class CustomDropDown extends StatelessWidget {
   const CustomDropDown({

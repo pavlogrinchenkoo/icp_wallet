@@ -1,4 +1,4 @@
-package com.example.korsun
+package com.ispwallet.io
 
 import io.flutter.embedding.android.FlutterActivity
 
