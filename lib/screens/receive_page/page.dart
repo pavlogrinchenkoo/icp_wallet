@@ -1,8 +1,5 @@
 import 'package:auto_route/auto_route.dart';
-import 'package:flutter/cupertino.dart';
-
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:isp_wallet/generated/assets.gen.dart';
 import 'package:isp_wallet/style.dart';
 import 'package:isp_wallet/utils/custom_stream_builder.dart';
@@ -22,6 +19,7 @@ class ReceivePage extends StatefulWidget {
 class _ReceivePageState extends State<ReceivePage> {
   final ReceiveBloc bloc = ReceiveBloc();
   bool isTapped = false;
+
   @override
   void initState() {
     bloc.init(context);
@@ -86,11 +84,16 @@ class _ReceivePageState extends State<ReceivePage> {
                                     )),
                                     Space.w22,
                                     GestureDetector(
-                                      onTapDown: (_) => setState(() => isTapped = true),
-                                      onTapUp: (_) => setState(() => isTapped = false),
+                                        onTapDown: (_) =>
+                                            setState(() => isTapped = true),
+                                        onTapUp: (_) =>
+                                            setState(() => isTapped = false),
                                         onTap: () => bloc.copy(context),
-                                        child: isTapped ? Assets.icons.copyGreen.svg(width: 20, height: 20) : Assets.icons.copy
-                                            .svg(width: 20, height: 20))
+                                        child: isTapped
+                                            ? Assets.icons.copyGreen
+                                                .svg(width: 20, height: 20)
+                                            : Assets.icons.copy
+                                                .svg(width: 20, height: 20))
                                   ],
                                 ),
                               ),
@@ -125,12 +128,13 @@ class _ReceivePageState extends State<ReceivePage> {
                               height: 200,
                               fit: BoxFit.fill,
                             ),
-                          if(state.mnemonic == 3)
+                          if (state.mnemonic == 3)
                             Assets.images.qrcode3.image(
                               width: 200,
                               height: 200,
                               fit: BoxFit.fill,
                             ),
+                          Space.h8,
                         ],
                       ),
                     ),

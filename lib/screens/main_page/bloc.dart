@@ -35,20 +35,22 @@ class MainBloc extends BlocBaseWithState<ScreenState> {
   }
 
   void logout(BuildContext context) async {
-    showDialog(context: context, builder: (_) {
-     return CustomShowDialog(
-        title: 'CONFIRM!',
-        content: 'Are you sure you want to log out of your account?',
-        buttonTwo: 'Cancel',
-        onTapTwo: () => context.router.pop(),
-        buttonOne: 'Yes, I confirm',
-        onTapOne: () {
-          cache.removeName();
-          context.router.replaceAll([const AuthRoute()]);
-        }
-      );
-    });
-
+    showDialog(
+        context: context,
+        builder: (_) {
+          return CustomShowDialog(
+              title: 'CONFIRM!',
+              content: 'Are you sure you want to log out of your account?',
+              buttonTwo: 'Cancel',
+              onTapTwo: () => context.router.pop(),
+              buttonOne: 'Yes, I confirm',
+              width: 270,
+              onTapOne: () {
+                cache.removeName();
+                context.router.replaceAll([const AuthRoute()]);
+              },
+              padding: const EdgeInsets.symmetric(horizontal: 16));
+        });
   }
 
   void goToSend(BuildContext context) async {
@@ -64,7 +66,7 @@ class MainBloc extends BlocBaseWithState<ScreenState> {
         context: context,
         builder: (_) {
           return CustomShowDialog(
-            height: 275,
+            height: 272,
             widget: (currentState.mnemonic == 1)
                 ? Assets.images.qrcode1.image(width: 190, height: 190)
                 : (currentState.mnemonic == 2)
@@ -94,13 +96,14 @@ class MainBloc extends BlocBaseWithState<ScreenState> {
         context: context,
         builder: (_) {
           return CustomShowDialog(
-            height: 135,
+            height: 136,
             title: 'Your receive number was copied!',
             buttonOne: 'OK',
             onTapOne: () {
               isTapped = true;
               return context.router.pop();
             },
+            padding: const EdgeInsets.symmetric(horizontal: 32),
           );
         });
     await Future.delayed(const Duration(seconds: 3));

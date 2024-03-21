@@ -29,7 +29,7 @@ class ReceiveBloc extends BlocBaseWithState<ScreenState> {
     } else if (mnemonic == 3) {
       setState(currentState.copyWith(
           address:
-          'f1c103010a8783df27dc73f39f3e23048ba48c9600bf4488cf2fefb8e83f42d9'));
+              'f1c103010a8783df27dc73f39f3e23048ba48c9600bf4488cf2fefb8e83f42d9'));
     }
   }
 
@@ -40,13 +40,14 @@ class ReceiveBloc extends BlocBaseWithState<ScreenState> {
         context: context,
         builder: (_) {
           return CustomShowDialog(
-            height: 135,
+            height: 136,
             title: 'Your receive number was copied!',
             buttonOne: 'OK',
             onTapOne: () {
               isTapped = true;
               return context.router.pop();
             },
+            padding: const EdgeInsets.symmetric(horizontal: 32),
           );
         });
     await Future.delayed(const Duration(seconds: 3));

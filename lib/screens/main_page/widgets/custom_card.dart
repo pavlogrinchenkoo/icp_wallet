@@ -8,6 +8,7 @@ import 'package:isp_wallet/utils/spaces.dart';
 class CustomCard extends StatefulWidget {
   final String? address;
   final Function()? onTap;
+
   const CustomCard({super.key, this.address, this.onTap});
 
   @override
@@ -16,6 +17,7 @@ class CustomCard extends StatefulWidget {
 
 class _CustomCardState extends State<CustomCard> {
   bool isTaped = false;
+
   @override
   Widget build(BuildContext context) {
     return Stack(
@@ -23,10 +25,10 @@ class _CustomCardState extends State<CustomCard> {
       clipBehavior: Clip.none,
       children: [
         Positioned(
-          top: 30,
+          top: 20,
           right: 0,
           child: Container(
-              width: 310,
+              width: MediaQuery.of(context).size.width - 64 - 20,
               height: 175,
               decoration: BoxDecoration(
                   borderRadius: BRadius.r21,
@@ -36,9 +38,8 @@ class _CustomCardState extends State<CustomCard> {
           top: 0,
           left: 0,
           child: Container(
-            width: 310,
-            padding: const EdgeInsets.symmetric(
-                horizontal: 16, vertical: 16),
+            width: MediaQuery.of(context).size.width - 64 - 20,
+            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
             decoration: BoxDecoration(
                 boxShadow: [
                   BoxShadow(
@@ -56,8 +57,7 @@ class _CustomCardState extends State<CustomCard> {
             child: Column(
               children: [
                 Row(
-                  crossAxisAlignment:
-                  CrossAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Assets.icons.logo.svg(
                       width: 54,
@@ -65,8 +65,7 @@ class _CustomCardState extends State<CustomCard> {
                     ),
                     const Spacer(),
                     Column(
-                      crossAxisAlignment:
-                      CrossAxisAlignment.end,
+                      crossAxisAlignment: CrossAxisAlignment.end,
                       children: [
                         Text('0.0000', style: BS.bold32),
                         Text('ICP', style: BS.light25),
@@ -75,12 +74,10 @@ class _CustomCardState extends State<CustomCard> {
                   ],
                 ),
                 Row(
-                  mainAxisAlignment:
-                  MainAxisAlignment.spaceBetween,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Column(
-                      crossAxisAlignment:
-                      CrossAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text('My Wallet:', style: BS.light18),
                         Space.h8,
@@ -88,20 +85,18 @@ class _CustomCardState extends State<CustomCard> {
                           children: [
                             Container(
                               width: 135,
-                              padding:
-                              const EdgeInsets.symmetric(
-                                  horizontal: 5,
-                                  vertical: 4),
+                              padding: const EdgeInsets.symmetric(
+                                  horizontal: 5, vertical: 4),
                               decoration: BoxDecoration(
                                 borderRadius: BRadius.r32,
-                                color: BC.white,
+                                border: Border.all(color: BC.white, width: 1),
+                                color: BC.white.withOpacity(0.85),
                               ),
                               child: Text(
                                 widget.address ?? '',
                                 style: BS.light12,
                                 textAlign: TextAlign.center,
-                                overflow:
-                                TextOverflow.ellipsis,
+                                overflow: TextOverflow.ellipsis,
                               ),
                             ),
                             Space.w8,
@@ -117,37 +112,39 @@ class _CustomCardState extends State<CustomCard> {
                                   });
                                 },
                                 onTap: widget.onTap,
-                                child: isTaped ? Container(
-                                  decoration: BoxDecoration(
-                                    shape: BoxShape.circle,
-                                    boxShadow: [
-                                      BoxShadow(
-                                        color: BC.green.withOpacity(0.3),
-                                        spreadRadius: 5,
-                                        blurRadius: 5,
-                                        offset: const Offset(-1 , 0),
-                                      ),
-                                    ]
-                                  ),
-                                  child: Assets.icons.copyGreen.svg(
-                                    width: 14,
-                                  ),
-                                ) : Container(
-                                  decoration: BoxDecoration(
-                                      shape: BoxShape.circle,
-                                      boxShadow: [
-                                        BoxShadow(
-                                          color: BC.white.withOpacity(0.3),
-                                          spreadRadius: 5,
-                                          blurRadius: 5,
-                                          offset: const Offset(-1 , 0),
+                                child: isTaped
+                                    ? Container(
+                                        decoration: BoxDecoration(
+                                            shape: BoxShape.circle,
+                                            boxShadow: [
+                                              BoxShadow(
+                                                color:
+                                                    BC.green.withOpacity(0.3),
+                                                spreadRadius: 5,
+                                                blurRadius: 5,
+                                                offset: const Offset(-1, 0),
+                                              ),
+                                            ]),
+                                        child: Assets.icons.copyGreen.svg(
+                                          width: 14,
                                         ),
-                                      ]
-                                  ),
-                                  child: Assets.icons.copyW.svg(
-                                    width: 14,
-                                  ),
-                                ))
+                                      )
+                                    : Container(
+                                        decoration: BoxDecoration(
+                                            shape: BoxShape.circle,
+                                            boxShadow: [
+                                              BoxShadow(
+                                                color:
+                                                    BC.white.withOpacity(0.3),
+                                                spreadRadius: 5,
+                                                blurRadius: 5,
+                                                offset: const Offset(-1, 0),
+                                              ),
+                                            ]),
+                                        child: Assets.icons.copyW.svg(
+                                          width: 14,
+                                        ),
+                                      ))
                           ],
                         )
                       ],

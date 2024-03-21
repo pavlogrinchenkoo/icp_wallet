@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:isp_wallet/style.dart';
 
 class CustomTextField extends StatefulWidget {
@@ -74,7 +73,7 @@ class _CustomTextFieldState extends State<CustomTextField> {
         ),
         focusedBorder: OutlineInputBorder(
           borderRadius: BRadius.r10,
-          borderSide: BorderSide(color: BC.green, width: 2),
+          borderSide: BorderSide(color: BC.green, width: 1),
         ),
         hintText: widget.labelText,
         hintStyle: BS.med18.apply(color: BC.white.withOpacity(0.7)),
@@ -154,7 +153,7 @@ class _CustomTextFieldBigState extends State<CustomTextFieldBig> {
             borderSide: BorderSide(color: BC.green, width: 2),
           ),
           hintText: widget.labelText,
-          hintStyle: BS.med18.apply(color: BC.white.withOpacity(0.7)),
+          hintStyle: BS.reg18.apply(color: BC.white.withOpacity(0.7)),
         ),
       ),
     );
@@ -217,10 +216,11 @@ class _CustomTextFieldSendState extends State<CustomTextFieldSend> {
             const EdgeInsets.symmetric(horizontal: 15, vertical: 17),
         enabledBorder: OutlineInputBorder(
           borderRadius: BRadius.r10,
+          borderSide: BorderSide(color: Colors.transparent, width: 1),
         ),
         focusedBorder: OutlineInputBorder(
           borderRadius: BRadius.r10,
-          borderSide: BorderSide(color: BC.green, width: 2),
+          borderSide: BorderSide(color: BC.green, width: 1),
         ),
         hintText: widget.labelText,
         hintStyle: BS.reg18.apply(color: BC.white.withOpacity(0.7)),
@@ -249,7 +249,6 @@ class CustomTextFieldDialog extends StatelessWidget {
       height: 40,
       child: TextField(
         cursorColor: BC.black.withOpacity(0.5),
-        cursorHeight: 14,
         cursorRadius: const Radius.circular(10),
         maxLength: maxLength,
         buildCounter: (BuildContext context,
@@ -259,6 +258,7 @@ class CustomTextFieldDialog extends StatelessWidget {
             null,
         controller: controller,
         decoration: InputDecoration(
+          contentPadding: EdgeInsets.symmetric(horizontal: 10, vertical: 0),
           enabledBorder: OutlineInputBorder(
             borderRadius: BRadius.r10,
             borderSide: BorderSide(color: BC.black.withOpacity(0.3), width: 1),
@@ -268,7 +268,7 @@ class CustomTextFieldDialog extends StatelessWidget {
             borderSide: BorderSide(color: BC.green, width: 1),
           ),
           hintText: labelText,
-          hintStyle: BS.light14.apply(color: BC.black),
+          hintStyle: BS.light13.apply(color: BC.black),
         ),
       ),
     );

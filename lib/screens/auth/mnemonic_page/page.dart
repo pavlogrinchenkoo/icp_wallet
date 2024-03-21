@@ -1,5 +1,4 @@
 import 'package:auto_route/auto_route.dart';
-
 import 'package:flutter/material.dart';
 import 'package:isp_wallet/generated/assets.gen.dart';
 import 'package:isp_wallet/style.dart';
@@ -47,22 +46,24 @@ class _MnemonicPageState extends State<MnemonicPage> {
                   Text('You log into your account as',
                       style: BS.bold20, textAlign: TextAlign.center),
                   Space.h16,
-                  Text(state.name.toUpperCase(),
-                      style: BS.bold24.apply(fontStyle: FontStyle.italic), textAlign: TextAlign.center),
+                  Text(state.name,
+                      style: BS.bold24.apply(fontStyle: FontStyle.italic),
+                      textAlign: TextAlign.center),
                   Space.h22,
                   Assets.icons.union.svg(
                     width: 90,
                     height: 90,
                   ),
                   Space.h16,
-                  Text('Mnemonic Phrase'.toUpperCase(),
+                  Text('Mnemonic Phrase',
                       style: BS.bold24, textAlign: TextAlign.center),
                   Space.h22,
                   CustomTextFieldBig(
-                    labelText: 'Please enter your Mnemonic Phrase',
-                      controller: controller, onChanged: (value) {
-                    bloc.changeDisabled(value);
-                  }),
+                      labelText: 'Please enter your Mnemonic Phrase',
+                      controller: controller,
+                      onChanged: (value) {
+                        bloc.changeDisabled(value);
+                      }),
                   Space.h32,
                   CustomButtonBlue(
                     onTap: () => bloc.login(context, controller.text),

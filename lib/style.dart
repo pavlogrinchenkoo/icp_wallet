@@ -41,159 +41,157 @@ abstract class BC {
 
 abstract class BS {
   static TextStyle get bold40 => GoogleFonts.poppins(
-    textStyle: TextStyle(
-        color: BC.white,
-        fontSize: 40,
-        // height: 1.28,
-        letterSpacing: 0.09,
-        fontWeight: FontWeight.w700),
-  );
+        textStyle: TextStyle(
+            color: BC.white,
+            fontSize: 40,
+            // height: 1.28,
+            letterSpacing: 0.09,
+            fontWeight: FontWeight.w700),
+      );
 
   static TextStyle get bold35 => GoogleFonts.poppins(
-    textStyle: TextStyle(
-        color: BC.white,
-        fontSize: 35,
-        // height: 1.28,
-        letterSpacing: 0.09,
-        fontWeight: FontWeight.w700),
-  );
+        textStyle: TextStyle(
+            color: BC.white,
+            fontSize: 35,
+            // height: 1.28,
+            letterSpacing: 0.09,
+            fontWeight: FontWeight.w700),
+      );
 
   static TextStyle get bold32 => GoogleFonts.poppins(
-    textStyle: TextStyle(
-        color: BC.white,
-        fontSize: 32,
-        // height: 1.28,
-        letterSpacing: 0.09,
-        fontWeight: FontWeight.w700),
-  );
+        textStyle: TextStyle(
+            color: BC.white,
+            fontSize: 32,
+            // height: 1.28,
+            letterSpacing: 0.09,
+            fontWeight: FontWeight.w700),
+      );
 
   static TextStyle get bold26Grotesk => GoogleFonts.spaceGrotesk(
-    textStyle: TextStyle(
-        color: BC.white,
-        fontSize: 26,
-        // height: 1.28,
-        letterSpacing: 0.09,
-        fontWeight: FontWeight.w700),
-  );
+        textStyle: TextStyle(
+            color: BC.white,
+            fontSize: 26,
+            // height: 1.28,
+            letterSpacing: 0.09,
+            fontWeight: FontWeight.w700),
+      );
 
   static TextStyle get bold24 => GoogleFonts.poppins(
-    textStyle: TextStyle(
-        color: BC.white,
-        fontSize: 24,
-        // height: 1.28,
-        letterSpacing: 0.09,
-        fontWeight: FontWeight.w700),
-  );
-
-
+        textStyle: TextStyle(
+            color: BC.white,
+            fontSize: 24,
+            // height: 1.28,
+            letterSpacing: 0.09,
+            fontWeight: FontWeight.w700),
+      );
 
   static TextStyle get bold20 => GoogleFonts.poppins(
-    textStyle: TextStyle(
-        color: BC.white,
-        fontSize: 20,
-        // height: 1.28,
-        letterSpacing: 0.09,
-        fontWeight: FontWeight.w700),
-  );
+        textStyle: TextStyle(
+            color: BC.white,
+            fontSize: 20,
+            // height: 1.28,
+            letterSpacing: 0.09,
+            fontWeight: FontWeight.w700),
+      );
 
   static TextStyle get bold18 => GoogleFonts.poppins(
-    textStyle: TextStyle(
-        color: BC.white,
-        fontSize: 18,
-        // height: 1.28,
-        letterSpacing: 0.09,
-        fontWeight: FontWeight.w700),
-  );
+        textStyle: TextStyle(
+            color: BC.white,
+            fontSize: 18,
+            // height: 1.28,
+            letterSpacing: 0.09,
+            fontWeight: FontWeight.w700),
+      );
 
   static TextStyle get sb18 => GoogleFonts.poppins(
-    textStyle: TextStyle(
-        color: BC.white,
-        fontSize: 18,
-        // height: 1.28,
-        letterSpacing: 0.09,
-        fontWeight: FontWeight.w600),
-  );
+        textStyle: TextStyle(
+            color: BC.white,
+            fontSize: 18,
+            // height: 1.28,
+            letterSpacing: 0.09,
+            fontWeight: FontWeight.w600),
+      );
 
   static TextStyle get sb17 => GoogleFonts.poppins(
-    textStyle: TextStyle(
-        color: BC.white,
-        fontSize: 17,
-        // height: 1.28,
-        letterSpacing: 0.09,
-        fontWeight: FontWeight.w600),
-  );
+        textStyle: TextStyle(
+            color: BC.white,
+            fontSize: 17,
+            // height: 1.28,
+            letterSpacing: 0.09,
+            fontWeight: FontWeight.w600),
+      );
 
   static TextStyle get med18 => GoogleFonts.poppins(
-    textStyle: TextStyle(
-        color: BC.white,
-        fontSize: 18,
-        // height: 1.28,
-        letterSpacing: 0.09,
-        fontWeight: FontWeight.w500),
-  );
+        textStyle: TextStyle(
+            color: BC.white,
+            fontSize: 18,
+            // height: 1.28,
+            letterSpacing: 0.09,
+            fontWeight: FontWeight.w500),
+      );
 
   static TextStyle get reg24 => GoogleFonts.poppins(
-    textStyle: TextStyle(
-        color: BC.white,
-        fontSize: 24,
-        // height: 1.28,
-        letterSpacing: 0.09,
-        fontWeight: FontWeight.w400),
-  );
+        textStyle: TextStyle(
+            color: BC.white,
+            fontSize: 24,
+            // height: 1.28,
+            letterSpacing: 0.09,
+            fontWeight: FontWeight.w400),
+      );
 
   static TextStyle get reg18 => GoogleFonts.poppins(
-    textStyle: TextStyle(
-        color: BC.white,
-        fontSize: 18,
-        // height: 1.28,
-        letterSpacing: 0.09,
-        fontWeight: FontWeight.w400),
-  );
+        textStyle: TextStyle(
+            color: BC.white,
+            fontSize: 18,
+            // height: 1.28,
+            letterSpacing: 0.09,
+            fontWeight: FontWeight.w400),
+      );
 
   static TextStyle get reg16 => GoogleFonts.poppins(
-    textStyle: TextStyle(
-        color: BC.white,
-        fontSize: 16,
-        // height: 1.28,
-        letterSpacing: 0.09,
-        fontWeight: FontWeight.w400),
-  );
+        textStyle: TextStyle(
+            color: BC.white,
+            fontSize: 16,
+            // height: 1.28,
+            letterSpacing: 0.09,
+            fontWeight: FontWeight.w400),
+      );
 
   static TextStyle get reg15 => GoogleFonts.poppins(
-    textStyle: TextStyle(
-        color: BC.white,
-        fontSize: 15,
-        // height: 1.28,
-        letterSpacing: 0.09,
-        fontWeight: FontWeight.w400),
-  );
+        textStyle: TextStyle(
+            color: BC.white,
+            fontSize: 15,
+            // height: 1.28,
+            letterSpacing: 0.09,
+            fontWeight: FontWeight.w400),
+      );
 
   static TextStyle get reg13 => GoogleFonts.poppins(
-    textStyle: TextStyle(
-        color: BC.white,
-        fontSize: 13,
-        // height: 1.28,
-        letterSpacing: 0.09,
-        fontWeight: FontWeight.w400),
-  );
+        textStyle: TextStyle(
+            color: BC.white,
+            fontSize: 13,
+            // height: 1.28,
+            letterSpacing: 0.09,
+            fontWeight: FontWeight.w400),
+      );
 
   static TextStyle get light25 => GoogleFonts.montserrat(
-    textStyle: TextStyle(
-        color: BC.white,
-        fontSize: 25,
-        height: 1.28,
-        letterSpacing: 0.09,
-        fontWeight: FontWeight.w300),
-  );
+        textStyle: TextStyle(
+            color: BC.white,
+            fontSize: 25,
+            height: 1.28,
+            letterSpacing: 0.09,
+            fontWeight: FontWeight.w300),
+      );
 
   static TextStyle get light18 => GoogleFonts.montserrat(
-    textStyle: TextStyle(
-        color: BC.white,
-        fontSize: 18,
-        height: 1.28,
-        // letterSpacing: 0.09,
-        fontWeight: FontWeight.w300),
-  );
+        textStyle: TextStyle(
+            color: BC.white,
+            fontSize: 18,
+            height: 1.28,
+            // letterSpacing: 0.09,
+            fontWeight: FontWeight.w300),
+      );
 
   static TextStyle get light14 => GoogleFonts.montserrat(
         textStyle: TextStyle(
@@ -204,14 +202,23 @@ abstract class BS {
             fontWeight: FontWeight.w300),
       );
 
+  static TextStyle get light13 => GoogleFonts.montserrat(
+        textStyle: TextStyle(
+            color: BC.white,
+            fontSize: 14,
+            height: 1.28,
+            letterSpacing: 0.09,
+            fontWeight: FontWeight.w300),
+      );
+
   static TextStyle get light12 => GoogleFonts.montserrat(
-    textStyle: TextStyle(
-        color: BC.black,
-        fontSize: 12,
-        height: 1.28,
-        letterSpacing: 0.09,
-        fontWeight: FontWeight.w300),
-  );
+        textStyle: TextStyle(
+            color: BC.black,
+            fontSize: 12,
+            height: 1.28,
+            letterSpacing: 0.09,
+            fontWeight: FontWeight.w300),
+      );
 }
 
 abstract class BDuration {
@@ -220,10 +227,15 @@ abstract class BDuration {
 
 abstract class BRadius {
   static BorderRadius get r50 => const BorderRadius.all(Radius.circular(50));
+
   static BorderRadius get r32 => const BorderRadius.all(Radius.circular(32));
+
   static BorderRadius get r21 => const BorderRadius.all(Radius.circular(21));
+
   static BorderRadius get r16 => const BorderRadius.all(Radius.circular(16));
+
   static BorderRadius get r14 => const BorderRadius.all(Radius.circular(14));
+
   static BorderRadius get r10 => const BorderRadius.all(Radius.circular(10));
 }
 

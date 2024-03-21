@@ -1,6 +1,5 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/cupertino.dart';
-
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:isp_wallet/generated/assets.gen.dart';
@@ -48,7 +47,7 @@ class _MainPageState extends State<MainPage> {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                             QR(
+                            QR(
                               onTap: () => bloc.qrCode(context),
                             ),
                             _NameEdit(
@@ -59,7 +58,8 @@ class _MainPageState extends State<MainPage> {
                           ],
                         ),
                         Space.h16,
-                         Expanded(child: CustomCard(
+                        Expanded(
+                            child: CustomCard(
                           onTap: () => bloc.copy(context),
                           address: state.address,
                         )),
@@ -88,7 +88,9 @@ class _MainPageState extends State<MainPage> {
                       children: [
                         Text('Transaction History'.toUpperCase(),
                             style: BS.bold20),
-                        Expanded(child: Assets.images.wallet.image()),
+                        Expanded(
+                            child: Assets.images.wallet
+                                .image(width: 143, height: 132)),
                       ],
                     ),
                   ),
@@ -102,6 +104,7 @@ class _MainPageState extends State<MainPage> {
 
 class QR extends StatefulWidget {
   final Function() onTap;
+
   const QR({super.key, required this.onTap});
 
   @override
@@ -110,18 +113,22 @@ class QR extends StatefulWidget {
 
 class _QRState extends State<QR> {
   bool isPressed = false;
+
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTapDown: (_) => setState(() => isPressed = true),
       onTapUp: (_) => setState(() => isPressed = false),
       onTap: widget.onTap,
-
       child: Row(
         children: [
-          (isPressed) ? Assets.icons.unionGreen.svg() : Assets.icons.group.svg(),
+          (isPressed)
+              ? Assets.icons.unionGreen.svg()
+              : Assets.icons.group.svg(),
           Space.w4,
-          Text('QR', style: BS.bold20.apply(color: isPressed ? BC.green : BC.white.withOpacity(0.8))),
+          Text('QR',
+              style: BS.bold20.apply(
+                  color: isPressed ? BC.green : BC.white.withOpacity(0.8))),
         ],
       ),
     );
@@ -146,21 +153,28 @@ class _NameEdit extends StatefulWidget {
 class _NameEditState extends State<_NameEdit> {
   bool isPressedEdit = false;
   bool isPressedLogout = false;
+
   @override
   Widget build(BuildContext context) {
     return Row(
       children: [
-    GestureDetector(
-    onTapDown: (_) => setState(() => isPressedEdit = true),
-    onTapUp: (_) => setState(() => isPressedEdit = false),
-    onTap: widget.onTapEdit, child: (isPressedEdit) ? Assets.icons.editGreen.svg() : Assets.icons.edit.svg()),
+        GestureDetector(
+            onTapDown: (_) => setState(() => isPressedEdit = true),
+            onTapUp: (_) => setState(() => isPressedEdit = false),
+            onTap: widget.onTapEdit,
+            child: (isPressedEdit)
+                ? Assets.icons.editGreen.svg()
+                : Assets.icons.edit.svg()),
         Space.w4,
         Text(widget.name, style: BS.bold20),
         Space.w16,
         GestureDetector(
             onTapDown: (_) => setState(() => isPressedLogout = true),
             onTapUp: (_) => setState(() => isPressedLogout = false),
-            onTap: widget.onTapLogout, child: (isPressedLogout) ? Assets.icons.logoutGreen.svg() : Assets.icons.logout.svg()),
+            onTap: widget.onTapLogout,
+            child: (isPressedLogout)
+                ? Assets.icons.logoutGreen.svg()
+                : Assets.icons.logout.svg()),
       ],
     );
   }

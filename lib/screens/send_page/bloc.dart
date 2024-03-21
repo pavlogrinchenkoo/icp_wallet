@@ -23,7 +23,7 @@ class SendBloc extends BlocBaseWithState<ScreenState> {
     if (currentState.isDisabled == false) {
       showDialog(context: context, builder: (_) {
        return CustomShowDialog(
-         height: 140,
+         height: 160,
           content: 'There are not enough funds on the account to complete the transaction',
           buttonOne: 'Close',
           onTapOne: () => context.router.pop(),

@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:isp_wallet/generated/assets.gen.dart';
-
 import 'package:isp_wallet/style.dart';
-
 
 class CustomScaffold extends StatelessWidget {
   const CustomScaffold(
@@ -18,7 +15,11 @@ class CustomScaffold extends StatelessWidget {
       backgroundColor: BC.black,
       appBar: appBar,
       bottomNavigationBar: bottomNavigationBar,
-      body: SafeArea(child: body),
+      body: GestureDetector(
+          onTap: () {
+            FocusScope.of(context).requestFocus(new FocusNode());
+          },
+          child: SafeArea(child: body)),
     );
   }
 }

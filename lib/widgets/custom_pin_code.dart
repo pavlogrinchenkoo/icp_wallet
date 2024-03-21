@@ -225,7 +225,10 @@ class _CustomButtonRemoveState extends State<_CustomButtonRemove> {
                         BC.darkGreen.withOpacity(0.3),
                         BC.green.withOpacity(0.3)
                       ])),
-        child: Center(child: Assets.icons.remuwe.svg()),
+        child: Center(child: Padding(
+          padding: const EdgeInsets.only(right: 4),
+          child: Assets.icons.remuwe.svg(),
+        )),
       ),
     );
   }

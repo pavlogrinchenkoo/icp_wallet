@@ -1,8 +1,5 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:isp_wallet/style.dart';
-import 'package:isp_wallet/utils/custom_functions.dart';
 import 'package:isp_wallet/utils/spaces.dart';
 
 class CustomShowDialog extends StatelessWidget {
@@ -14,6 +11,8 @@ class CustomShowDialog extends StatelessWidget {
   final Function()? onTapTwo;
   final Widget? widget;
   final double? height;
+  final double? width;
+  final EdgeInsets? padding;
 
   const CustomShowDialog(
       {super.key,
@@ -23,16 +22,16 @@ class CustomShowDialog extends StatelessWidget {
       this.buttonTwo,
       this.onTapOne,
       this.onTapTwo,
-      this.widget, this.height});
+      this.widget,
+      this.height,
+      this.width,
+      this.padding});
 
   @override
   Widget build(BuildContext context) {
     return Dialog(
-      insetPadding: EdgeInsets.symmetric(
-        horizontal: getAdaptivePadding(120),
-      ),
       child: Container(
-        width: 130,
+        width: width ?? 230,
         height: height ?? 150,
         decoration: BoxDecoration(
           color: BC.white,
@@ -41,55 +40,63 @@ class CustomShowDialog extends StatelessWidget {
         child: Column(
           children: [
             Space.h16,
-           if(title != null) Padding(
-             padding: const EdgeInsets.symmetric(horizontal: 16),
-             child: Text(title ?? "",
-                  style: BS.sb18.apply(color: BC.black),
-                  textAlign: TextAlign.center),
-           ),
+            if (title != null)
+              Padding(
+                padding: padding ?? const EdgeInsets.symmetric(horizontal: 16),
+                child: Text(title ?? "",
+                    style: BS.sb18.apply(color: BC.black),
+                    textAlign: TextAlign.center),
+              ),
             Space.h8,
-          if(widget != null)  widget ?? const SizedBox(),
-          if(content != null)  Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 32),
-              child: Text(content ?? "",
-                  style: BS.reg13.apply(color: BC.black),
-                  textAlign: TextAlign.center),
-            ),
+            if (widget != null) widget ?? const SizedBox(),
+            if (content != null)
+              Padding(
+                padding: padding ?? const EdgeInsets.symmetric(horizontal: 8),
+                child: Text(content ?? "",
+                    style: title != null
+                        ? BS.reg13.apply(color: BC.black)
+                        : BS.reg18.apply(color: BC.black),
+                    textAlign: TextAlign.center),
+              ),
             Space.h16,
-            
             Container(
               height: 0.5,
               color: BC.black.withOpacity(0.3),
             ),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  const Spacer(),
-                  (buttonOne != null)
-                      ? Padding(
-                        padding: const EdgeInsets.symmetric(vertical: 8),
-                        child: InkWell(
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                (buttonOne != null)
+                    ? Expanded(
+                        child: Padding(
+                          padding: const EdgeInsets.symmetric(vertical: 8),
+                          child: InkWell(
                             onTap: onTapOne,
-                            child: Text(buttonOne ?? '',
-                                style: BS.sb17.apply(color: BC.blackBlue)),
+                            child: Center(
+                              child: Text(buttonOne ?? '',
+                                  style: BS.sb17.apply(color: BC.blackBlue)),
+                            ),
                           ),
+                        ),
                       )
-                      : const SizedBox(),
-                  const Spacer(),
-                 if(buttonTwo != null)  Container(width: 0.5, height: 45, color: BC.black.withOpacity(0.3)),
-                if(buttonTwo != null)  const Spacer(),
-                  (buttonTwo != null)
-                      ? InkWell(
-                          onTap: onTapTwo,
-                          child: Text(buttonTwo ?? '',
-                              style: BS.sb17.apply(color: BC.blackBlue)))
-                      : const SizedBox(),
-                 if(buttonTwo != null) const Spacer(),
-                ],
-              ),
+                    : const SizedBox(),
+                if (buttonTwo != null)
+                  Container(
+                      width: 0.5,
+                      height: 45,
+                      color: BC.black.withOpacity(0.3)),
+                (buttonTwo != null)
+                    ? Expanded(
+                        child: InkWell(
+                            onTap: onTapTwo,
+                            child: Center(
+                              child: Text(buttonTwo ?? '',
+                                  style: BS.sb17.apply(color: BC.blackBlue)),
+                            )),
+                      )
+                    : const SizedBox(),
+              ],
             )
           ],
         ),
