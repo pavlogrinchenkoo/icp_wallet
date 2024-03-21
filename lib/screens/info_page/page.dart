@@ -39,11 +39,7 @@ class _InfoPageState extends State<InfoPage> {
                     children: [
                       SizedBox(
                         width: 117,
-                        child: (state.page == 2)
-                            ? CustomButtonGreen(
-                                onTap: () => bloc.next(pageController, context),
-                                text: 'SKIP')
-                            : CustomButtonBlue(
+                        child: CustomButtonBlue(
                                 onTap: () => bloc.skip(context),
                                 text: 'SKIP',
                               ),
@@ -69,7 +65,7 @@ class _InfoPageState extends State<InfoPage> {
                         Column(
                           children: [
                             Assets.images.trafik.image(),
-                            Text('Modern Technologies'.toUpperCase(),
+                            Text('Modern \n Technologies'.toUpperCase(),
                                 style: BS.reg24, textAlign: TextAlign.center),
                           ],
                         ),
@@ -77,18 +73,14 @@ class _InfoPageState extends State<InfoPage> {
                           children: [
                             Space.h32,
                             Assets.images.banck.image(),
-                            Text('Instant Transactions'.toUpperCase(),
+                            Text('Instant \n Transactions'.toUpperCase(),
                                 style: BS.reg24, textAlign: TextAlign.center),
                           ],
                         ),
                       ],
                     ),
                   ),
-                  (state.page == 2)
-                      ? CustomButtonGreen(
-                          onTap: () => bloc.next(pageController, context),
-                          text: 'Continue'.toUpperCase())
-                      : CustomButtonBlue(
+                   CustomButtonBlue(
                           onTap: () => bloc.next(pageController, context),
                           text: 'Continue'.toUpperCase(),
                         ),

@@ -117,6 +117,11 @@ class _QRState extends State<QR> {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
+      onTapCancel: () {
+        setState(() {
+          isPressed = false;
+        });
+      },
       onTapDown: (_) => setState(() => isPressed = true),
       onTapUp: (_) => setState(() => isPressed = false),
       onTap: widget.onTap,
@@ -159,6 +164,11 @@ class _NameEditState extends State<_NameEdit> {
     return Row(
       children: [
         GestureDetector(
+            onTapCancel: () {
+              setState(() {
+                isPressedEdit = false;
+              });
+            },
             onTapDown: (_) => setState(() => isPressedEdit = true),
             onTapUp: (_) => setState(() => isPressedEdit = false),
             onTap: widget.onTapEdit,
@@ -169,6 +179,11 @@ class _NameEditState extends State<_NameEdit> {
         Text(widget.name, style: BS.bold20),
         Space.w16,
         GestureDetector(
+            onTapCancel: () {
+              setState(() {
+                isPressedLogout = false;
+              });
+            },
             onTapDown: (_) => setState(() => isPressedLogout = true),
             onTapUp: (_) => setState(() => isPressedLogout = false),
             onTap: widget.onTapLogout,

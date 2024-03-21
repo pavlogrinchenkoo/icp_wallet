@@ -17,6 +17,11 @@ class _CustomButtonBlueState extends State<CustomButtonBlue> {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
+      onTapCancel: () {
+        setState(() {
+          isTapped = false;
+        });
+      },
       onTapDown: (_) {
         setState(() {
           isTapped = true;
@@ -88,6 +93,11 @@ class _CustomButtonBlueWidgetState extends State<CustomButtonBlueWidget> {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
+      onTapCancel: () {
+        setState(() {
+          isTapped = false;
+        });
+      },
       onTapDown: (_) {
         setState(() {
           isTapped = true;

@@ -21,7 +21,7 @@ class MnemonicBloc extends BlocBaseWithState<ScreenState> {
   }
 
   void changeDisabled(String value) async {
-    if (value.length <= 30) {
+    if (value.length < 30) {
       setState(currentState.copyWith(disabled: true));
     } else {
       setState(currentState.copyWith(disabled: false));

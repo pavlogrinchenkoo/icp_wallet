@@ -40,11 +40,13 @@ class MainBloc extends BlocBaseWithState<ScreenState> {
         builder: (_) {
           return CustomShowDialog(
               title: 'CONFIRM!',
-              content: 'Are you sure you want to log out of your account?',
+              content: 'Delete account?',
+              textStyle: BS.reg13.apply(color: BC.red),
               buttonTwo: 'Cancel',
               onTapTwo: () => context.router.pop(),
               buttonOne: 'Yes, I confirm',
-              width: 270,
+              width: 260,
+              height: 131,
               onTapOne: () {
                 cache.removeName();
                 context.router.replaceAll([const AuthRoute()]);
@@ -130,7 +132,7 @@ class MainBloc extends BlocBaseWithState<ScreenState> {
                 CustomTextFieldDialog(
                   controller: controller,
                   labelText: 'Enter new account name',
-                  maxLength: 12,
+                  maxLength: 15,
                 ),
               ],
             ),

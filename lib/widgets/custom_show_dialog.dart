@@ -13,6 +13,7 @@ class CustomShowDialog extends StatelessWidget {
   final double? height;
   final double? width;
   final EdgeInsets? padding;
+  final TextStyle? textStyle;
 
   const CustomShowDialog(
       {super.key,
@@ -25,7 +26,7 @@ class CustomShowDialog extends StatelessWidget {
       this.widget,
       this.height,
       this.width,
-      this.padding});
+      this.padding, this.textStyle});
 
   @override
   Widget build(BuildContext context) {
@@ -53,7 +54,7 @@ class CustomShowDialog extends StatelessWidget {
               Padding(
                 padding: padding ?? const EdgeInsets.symmetric(horizontal: 8),
                 child: Text(content ?? "",
-                    style: title != null
+                    style: (textStyle != null) ? textStyle : title != null
                         ? BS.reg13.apply(color: BC.black)
                         : BS.reg18.apply(color: BC.black),
                     textAlign: TextAlign.center),

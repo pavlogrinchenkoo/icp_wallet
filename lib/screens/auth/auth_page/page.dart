@@ -37,7 +37,7 @@ class _AuthPageState extends State<AuthPage> {
                   const Spacer(),
                   Expanded(child: Assets.icons.person.svg()),
                   Space.h64,
-                  Text('Log in to get started'.toUpperCase(),
+                  Text('Log in to \n get started'.toUpperCase(),
                       style: BS.reg24, textAlign: TextAlign.center),
                   Space.h32,
                   CustomButtonBlue(

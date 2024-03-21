@@ -33,6 +33,9 @@ class _CustomTextFieldState extends State<CustomTextField> {
   @override
   Widget build(BuildContext context) {
     return TextField(
+      onEditingComplete: () {
+        FocusScope.of(context).unfocus();
+      },
       maxLength: widget.maxLength,
       buildCounter: (BuildContext context,
               {required int currentLength,
@@ -114,6 +117,9 @@ class _CustomTextFieldBigState extends State<CustomTextFieldBig> {
     return SizedBox(
       height: 150,
       child: TextField(
+        onEditingComplete: () {
+          FocusScope.of(context).unfocus();
+        },
         maxLines: null,
         minLines: 6,
         controller: widget.controller,
@@ -153,7 +159,7 @@ class _CustomTextFieldBigState extends State<CustomTextFieldBig> {
             borderSide: BorderSide(color: BC.green, width: 2),
           ),
           hintText: widget.labelText,
-          hintStyle: BS.reg18.apply(color: BC.white.withOpacity(0.7)),
+          hintStyle: BS.reg15.apply(color: BC.white.withOpacity(0.7)),
         ),
       ),
     );
@@ -194,6 +200,9 @@ class _CustomTextFieldSendState extends State<CustomTextFieldSend> {
   @override
   Widget build(BuildContext context) {
     return TextField(
+      onEditingComplete: () {
+        FocusScope.of(context).unfocus();
+      },
       maxLength: widget.maxLength,
       buildCounter: (BuildContext context,
               {required int currentLength,
@@ -248,6 +257,9 @@ class CustomTextFieldDialog extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 16),
       height: 40,
       child: TextField(
+        onEditingComplete: () {
+          FocusScope.of(context).unfocus();
+        },
         cursorColor: BC.black.withOpacity(0.5),
         cursorRadius: const Radius.circular(10),
         maxLength: maxLength,

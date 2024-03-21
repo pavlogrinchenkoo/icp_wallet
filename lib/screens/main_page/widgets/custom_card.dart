@@ -101,6 +101,11 @@ class _CustomCardState extends State<CustomCard> {
                             ),
                             Space.w8,
                             GestureDetector(
+                                onTapCancel: () {
+                                  setState(() {
+                                    isTaped = false;
+                                  });
+                                },
                                 onTapDown: (_) {
                                   setState(() {
                                     isTaped = true;

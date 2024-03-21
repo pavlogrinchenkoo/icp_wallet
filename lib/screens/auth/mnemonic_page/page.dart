@@ -30,50 +30,53 @@ class _MnemonicPageState extends State<MnemonicPage> {
 
   @override
   Widget build(BuildContext context) {
-    return CustomStreamBuilder(
-        bloc: bloc,
-        builder: (BuildContext context, ScreenState state) {
-          return CustomScaffold(
-              body: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 32),
-            child: Center(
-              child: Column(
-                children: [
-                  Text('Welcome back!'.toUpperCase(),
-                      style: BS.bold24.apply(color: BC.blue),
-                      textAlign: TextAlign.center),
-                  Space.h16,
-                  Text('You log into your account as',
-                      style: BS.bold20, textAlign: TextAlign.center),
-                  Space.h16,
-                  Text(state.name,
-                      style: BS.bold24.apply(fontStyle: FontStyle.italic),
-                      textAlign: TextAlign.center),
-                  Space.h22,
-                  Assets.icons.union.svg(
-                    width: 90,
-                    height: 90,
-                  ),
-                  Space.h16,
-                  Text('Mnemonic Phrase',
-                      style: BS.bold24, textAlign: TextAlign.center),
-                  Space.h22,
-                  CustomTextFieldBig(
-                      labelText: 'Please enter your Mnemonic Phrase',
-                      controller: controller,
-                      onChanged: (value) {
-                        bloc.changeDisabled(value);
-                      }),
-                  Space.h32,
-                  CustomButtonBlue(
-                    onTap: () => bloc.login(context, controller.text),
-                    text: 'CONTINUE',
-                    disabled: state.disabled,
-                  )
-                ],
+    return GestureDetector(
+      onTap: () => FocusScope.of(context).unfocus(),
+      child: CustomStreamBuilder(
+          bloc: bloc,
+          builder: (BuildContext context, ScreenState state) {
+            return CustomScaffold(
+                body: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 32),
+              child: Center(
+                child: Column(
+                  children: [
+                    Text('Welcome back!'.toUpperCase(),
+                        style: BS.bold24.apply(color: BC.blue),
+                        textAlign: TextAlign.center),
+                    Space.h16,
+                    Text('You log into your account as',
+                        style: BS.bold20, textAlign: TextAlign.center),
+                    Space.h16,
+                    Text(state.name,
+                        style: BS.bold24.apply(fontStyle: FontStyle.italic),
+                        textAlign: TextAlign.center),
+                    Space.h22,
+                    Assets.icons.union.svg(
+                      width: 90,
+                      height: 90,
+                    ),
+                    Space.h16,
+                    Text('Mnemonic Phrase',
+                        style: BS.bold24, textAlign: TextAlign.center),
+                    Space.h22,
+                    CustomTextFieldBig(
+                        labelText: 'Please enter your Mnemonic Phrase',
+                        controller: controller,
+                        onChanged: (value) {
+                          bloc.changeDisabled(value);
+                        }),
+                    Space.h32,
+                    CustomButtonBlue(
+                      onTap: () => bloc.login(context, controller.text),
+                      text: 'CONTINUE',
+                      disabled: state.disabled,
+                    )
+                  ],
+                ),
               ),
-            ),
-          ));
-        });
+            ));
+          }),
+    );
   }
 }

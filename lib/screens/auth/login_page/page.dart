@@ -25,50 +25,53 @@ class _LoginPageState extends State<LoginPage> {
 
   @override
   Widget build(BuildContext context) {
-    return CustomStreamBuilder(
-        bloc: bloc,
-        builder: (BuildContext context, ScreenState state) {
-          return CustomScaffold(
-            body: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 32),
-              child: Center(
-                child: Column(
-                  children: [
-                    const Spacer(),
-                    Assets.icons.personBall.svg(),
-                    Space.h32,
-                    Text('my Profile '.toUpperCase(),
-                        style: BS.bold24.apply(color: BC.blue)),
-                    Space.h24,
-                    Text('Please enter your account Name',
-                        style: BS.bold20, textAlign: TextAlign.center),
-                    Space.h22,
-                    CustomTextField(
-                      maxLength: 15,
-                      controller: controller,
-                      labelText: 'Your Name',
-                      onChanged: (value) {
-                        bloc.changeDisabled(value);
-                      },
-                    ),
-                    Space.h22,
-                    CustomButtonBlue(
-                      onTap: () => bloc.login(context, controller.text),
-                      text: 'CONTINUE',
-                      disabled: state.disabled,
-                    ),
-                    Spacer(),
-                    Text(
-                      'You can later change the account name you set',
-                      style: BS.bold20,
-                      textAlign: TextAlign.center,
-                    ),
-                    Space.h16
-                  ],
+    return GestureDetector(
+      onTap: () => FocusScope.of(context).unfocus(),
+      child: CustomStreamBuilder(
+          bloc: bloc,
+          builder: (BuildContext context, ScreenState state) {
+            return CustomScaffold(
+              body: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 32),
+                child: Center(
+                  child: Column(
+                    children: [
+                      const Spacer(),
+                      Assets.icons.personBall.svg(),
+                      Space.h32,
+                      Text('my Profile '.toUpperCase(),
+                          style: BS.bold24.apply(color: BC.blue)),
+                      Space.h24,
+                      Text('Please enter your account Name',
+                          style: BS.bold20, textAlign: TextAlign.center),
+                      Space.h22,
+                      CustomTextField(
+                        maxLength: 15,
+                        controller: controller,
+                        labelText: 'Your Name',
+                        onChanged: (value) {
+                          bloc.changeDisabled(value);
+                        },
+                      ),
+                      Space.h22,
+                      CustomButtonBlue(
+                        onTap: () => bloc.login(context, controller.text),
+                        text: 'CONTINUE',
+                        disabled: state.disabled,
+                      ),
+                      Spacer(),
+                      Text(
+                        'You can later change the account name you set',
+                        style: BS.bold20,
+                        textAlign: TextAlign.center,
+                      ),
+                      Space.h16
+                    ],
+                  ),
                 ),
               ),
-            ),
-          );
-        });
+            );
+          }),
+    );
   }
 }
